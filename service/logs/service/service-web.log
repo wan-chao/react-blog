@@ -1,0 +1,621 @@
+2019-11-14 14:47:20,880 ERROR 11644 [-/127.0.0.1/-/13ms GET /default/getArticleList] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JSON type ON article.type_id = type.ID' at line 1
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JSON type ON article.type_id = type.ID
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JSON type ON article.type_id = type.ID' at line 1"
+sqlState: "42000"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JSON type ON article.type_id = type.ID"
+name: "ER_PARSE_ERRORError"
+pid: 11644
+hostname: LS--20160520HBN
+
+2019-11-14 14:47:54,675 ERROR 5908 [-/127.0.0.1/-/14ms GET /default/getArticleList] nodejs.ER_NO_SUCH_TABLEError: ER_NO_SUCH_TABLE: Table 'react_blog.article' doesn't exist
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id
+code: "ER_NO_SUCH_TABLE"
+errno: 1146
+sqlMessage: "Table 'react_blog.article' doesn't exist"
+sqlState: "42S02"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id"
+name: "ER_NO_SUCH_TABLEError"
+pid: 5908
+hostname: LS--20160520HBN
+
+2019-11-14 14:48:42,237 ERROR 5908 [-/127.0.0.1/-/6ms GET /default/getArticleList] nodejs.ER_NO_SUCH_TABLEError: ER_NO_SUCH_TABLE: Table 'react_blog.article' doesn't exist
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id
+code: "ER_NO_SUCH_TABLE"
+errno: 1146
+sqlMessage: "Table 'react_blog.article' doesn't exist"
+sqlState: "42S02"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id"
+name: "ER_NO_SUCH_TABLEError"
+pid: 5908
+hostname: LS--20160520HBN
+
+2019-11-14 14:49:49,272 ERROR 13112 [-/127.0.0.1/-/11ms GET /default/getArticleList] nodejs.ER_NO_SUCH_TABLEError: ER_NO_SUCH_TABLE: Table 'react_blog.article' doesn't exist
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id
+code: "ER_NO_SUCH_TABLE"
+errno: 1146
+sqlMessage: "Table 'react_blog.article' doesn't exist"
+sqlState: "42S02"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id"
+name: "ER_NO_SUCH_TABLEError"
+pid: 13112
+hostname: LS--20160520HBN
+
+2019-11-14 14:51:20,431 ERROR 11704 [-/127.0.0.1/-/19ms GET /default/getArticleList] nodejs.ER_NO_SUCH_TABLEError: ER_NO_SUCH_TABLE: Table 'react_blog.article' doesn't exist
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id
+code: "ER_NO_SUCH_TABLE"
+errno: 1146
+sqlMessage: "Table 'react_blog.article' doesn't exist"
+sqlState: "42S02"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id"
+name: "ER_NO_SUCH_TABLEError"
+pid: 11704
+hostname: LS--20160520HBN
+
+2019-11-14 14:52:25,145 ERROR 10548 [-/127.0.0.1/-/10ms GET /default/getArticleList] nodejs.ER_NO_SUCH_TABLEError: ER_NO_SUCH_TABLE: Table 'react_blog.article' doesn't exist
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id
+code: "ER_NO_SUCH_TABLE"
+errno: 1146
+sqlMessage: "Table 'react_blog.article' doesn't exist"
+sqlState: "42S02"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.addTime as addTime,article.view_count as view_count,type.typeName as typeName FROM article LEFT JOIN type ON article.type_id = type.Id"
+name: "ER_NO_SUCH_TABLEError"
+pid: 10548
+hostname: LS--20160520HBN
+
+2019-11-14 15:32:54,077 ERROR 10260 [-/127.0.0.1/-/11ms GET /default/getArticleById] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10260
+hostname: LS--20160520HBN
+
+2020-01-07 15:06:15,932 WARN 9868 [-/127.0.0.1/-/56ms POST /admin/checkLogin] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2020-01-07 15:06:15,977 WARN 9868 [-/127.0.0.1/-/102ms POST /admin/checkLogin] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (E:\REACT_DEMO\react_blog\service\node_modules\koa\lib\context.js:97:11)
+    at Object.assertCsrf (E:\REACT_DEMO\react_blog\service\node_modules\egg-security\app\extend\context.js:163:19)
+    at csrf (E:\REACT_DEMO\react_blog\service\node_modules\egg-security\lib\middlewares\csrf.js:33:9)
+    at dispatch (E:\REACT_DEMO\react_blog\service\node_modules\koa-compose\index.js:42:32)
+    at E:\REACT_DEMO\react_blog\service\node_modules\koa-compose\index.js:34:12
+    at dispatch (E:\REACT_DEMO\react_blog\service\node_modules\koa-compose\index.js:42:32)
+    at session (E:\REACT_DEMO\react_blog\service\node_modules\koa-session\index.js:41:13)
+    at dispatch (E:\REACT_DEMO\react_blog\service\node_modules\koa-compose\index.js:42:32)
+    at overrideMethod (E:\REACT_DEMO\react_blog\service\node_modules\koa-override\index.js:38:12)
+    at dispatch (E:\REACT_DEMO\react_blog\service\node_modules\koa-compose\index.js:42:32)
+message: "invalid csrf token"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+pid: 9868
+hostname: LS--20160520HBN
+
+2020-01-08 16:42:35,986 ERROR 9972 [-/127.0.0.1/-/217ms GET /admin/delArticle/[object%20Object]] nodejs.ER_TRUNCATED_WRONG_VALUEError: ER_TRUNCATED_WRONG_VALUE: Truncated incorrect DOUBLE value: '[object Object]'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: DELETE FROM `article` WHERE `id` = '[object Object]'
+code: "ER_TRUNCATED_WRONG_VALUE"
+errno: 1292
+sqlMessage: "Truncated incorrect DOUBLE value: '[object Object]'"
+sqlState: "22007"
+index: 0
+sql: "DELETE FROM `article` WHERE `id` = '[object Object]'"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_TRUNCATED_WRONG_VALUEError"
+pid: 9972
+hostname: LS--20160520HBN
+
+2020-01-08 16:42:51,207 ERROR 9972 [-/127.0.0.1/-/6ms GET /admin/delArticle/[object%20Object]] nodejs.ER_TRUNCATED_WRONG_VALUEError: ER_TRUNCATED_WRONG_VALUE: Truncated incorrect DOUBLE value: '[object Object]'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: DELETE FROM `article` WHERE `id` = '[object Object]'
+code: "ER_TRUNCATED_WRONG_VALUE"
+errno: 1292
+sqlMessage: "Truncated incorrect DOUBLE value: '[object Object]'"
+sqlState: "22007"
+index: 0
+sql: "DELETE FROM `article` WHERE `id` = '[object Object]'"
+name: "ER_TRUNCATED_WRONG_VALUEError"
+pid: 9972
+hostname: LS--20160520HBN
+
+2020-01-09 14:27:58,104 ERROR 10460 [-/127.0.0.1/-/131ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:01,423 ERROR 10460 [-/127.0.0.1/-/3ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:02,956 ERROR 10460 [-/127.0.0.1/-/1ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:02,965 ERROR 10460 [-/127.0.0.1/-/2ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:03,116 ERROR 10460 [-/127.0.0.1/-/2ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:03,293 ERROR 10460 [-/127.0.0.1/-/2ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:03,499 ERROR 10460 [-/127.0.0.1/-/2ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:10,322 ERROR 10460 [-/127.0.0.1/-/1ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
+2020-01-09 14:28:12,083 ERROR 10460 [-/127.0.0.1/-/2ms GET /default/getArticleById/undefined] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+    at Query.Sequence._packetToError (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Connection.js:525:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    --------------------
+    at Pool.query (E:\REACT_DEMO\react_blog\service\node_modules\mysql\lib\Pool.js:199:23)
+    at E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (E:\REACT_DEMO\react_blog\service\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\client.js:34:20)
+    at RDSClient.proto.query (E:\REACT_DEMO\react_blog\service\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:65:19)
+    at E:\REACT_DEMO\react_blog\service\node_modules\co\index.js:54:5
+    sql: SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'undefined' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT article.id as id,article.title as title,article.introduce as introduce,article.article_content as article_content,FROM_UNIXTIME(article.addTime,'%Y-%m-%d %H:%i:%s' ) as addTime,article.view_count as view_count ,type.typeName as typeName ,type.id as typeId FROM article LEFT JOIN type ON article.type_id = type.Id WHERE article.id=undefined"
+headers: {"Access-Control-Allow-Origin":"http://localhost:3000","Access-Control-Allow-Credentials":"true","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 10460
+hostname: LS--20160520HBN
+
